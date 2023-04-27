@@ -16,7 +16,7 @@ class PersonForm extends React.Component {
                 </div>
                 <div className='col-md-3'>
                     {!isEditing && <button onClick={onAddClick} className='btn btn-primary btn-block'>Add</button>}
-                    {!!isEditing && <div> 
+                    {isEditing && <div> 
                                         <button onClick={onUpdateClick} className='btn btn-warning btn-block'>Update</button>
                                         <button onClick={onCancelClick} className='btn btn-info btn-block'>Cancel</button>
                                     </div>}

@@ -28,7 +28,7 @@ class PeopleTable extends React.Component {
 
     onCheckboxChangeClick = p => {
         if(this.isChecked(p)){
-            const checkedPeople = this.state.checkedPeople.filter(pe => pe.Id !== p.Id);
+            const checkedPeople = this.state.checkedPeople.filter(pe => pe.id !== p.id);
             this.setState({ checkedPeople });
         }
         else{
@@ -127,9 +127,16 @@ class PeopleTable extends React.Component {
         const {id, firstName, lastName, age} = person;
         return(
    <div className='container mt-5'>   
-                <PersonForm id={id} firstName={firstName} lastName={lastName} age={age} onAddClick={this.onAddClick} 
-                onTextChange={this.onTextChange} isEditing={this.isEditing} onUpdateClick={this.onUpdateClick} 
-                onCancelClick={this.onCancelClick}/>
+                <PersonForm 
+                    id={id} 
+                    firstName={firstName} 
+                    lastName={lastName} 
+                    age={age} 
+                    onAddClick={this.onAddClick} 
+                    onTextChange={this.onTextChange} 
+                    isEditing={this.state.isEditing} 
+                    onUpdateClick={this.onUpdateClick} 
+                    onCancelClick={this.onCancelClick}/>
                 <table className='table table-hover table-striped table-bordered mt-3'>
                     <thead>
                         <tr>
